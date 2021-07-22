@@ -1,0 +1,140 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="css/test.css">
+
+        <style>
+            #services {  display: flex; }
+
+            .button { 
+                width: 200px;
+                padding: 25px 35px;
+                text-align: left;
+                color: white;
+                background-color: midnightblue;
+                margin-bottom: 1px;
+                text-transform: uppercase;
+                transition: .3s;
+                cursor: pointer;
+            }
+            .button:hover {
+                color: midnightblue;
+                background-color:steelblue;
+            }
+            .active { 
+                border: solid 1px midnightblue;
+                color: black;
+                background-color:steelblue;
+                width: 198px;
+            }
+            #left { 
+                width: 30%; 
+                padding-right: 15px;
+            }
+
+            .content { 
+                display: none; 
+                text-align: left;
+                padding: 20px;
+                border-radius: 8px;
+                border: solid 1px #ccc;
+                background-color: rgba(255,255,255, .25);
+                margin-left: 20px;
+            }
+
+            .content:first-child { display: block; } 
+
+        </style>
+
+    </head>
+
+    
+    <body>
+        <header>
+            <div id="logo">
+                <h1 id="BASite">BadAss Site</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li class="liElement">About Us</li>
+                    <li id="mission" class="liElement">Mission</li>
+                    <li class="liElement">Contact Us</li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <h1>Main content area.</h1>
+            <div id="services">
+                <div id="left">
+                    <div id="button1" class="button active">
+                        Button 1
+                    </div>
+                    <div id="button2" class="button">
+                        Button 2
+                    </div>
+                    <div id="button3" class="button">
+                        Button 3
+                    </div>
+                </div>
+
+                <div id="right">
+                    <div id="content1" class="content">
+                        <h2>This is section 1</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est&nbsp;laborum.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est&nbsp;laborum.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est&nbsp;laborum.</p>
+                    </div>
+                    <div id="content2" class="content">
+                        <h2>This is section 2</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est&nbsp;laborum.</p>
+                    </div>
+                    <div id="content3" class="content">
+                        <h2>This is section 3</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est&nbsp;laborum.</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <h5>2021 Copyright. All Rights Reserved.</h5>
+        </footer>
+
+
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script>
+            $(document).ready(function() {
+
+                $('.button').on('click', function(){
+                    $('.button').removeClass('active')
+                    $(this).addClass('active')
+                })
+
+                $('#button1').on('click', function(){
+                    $('#content2, #content3').hide()
+                    $('#content1').fadeIn(500)
+                })
+                $('#button2').on('click', function(){
+                    $('#content1, #content3').hide()
+                    $('#content2').fadeIn(500)
+                })
+                $('#button3').on('click', function(){
+                    $('#content1, #content2').hide()
+                    $('#content3').fadeIn(500)
+                })
+
+                $("#BASite").css({
+                        "color": "blue",
+                        "text-transform": "uppercase"
+                    }).text("badass")
+
+            })
+        </script>
+        
+        
+    </body>
+</html>
